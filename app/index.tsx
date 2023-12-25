@@ -1,103 +1,98 @@
-import React, { useRef } from "react";
-import { Animated, ScrollView, StyleSheet, Text, View } from "react-native";
+import * as React from "react";
+import {
+  View,
+  useWindowDimensions,
+  Text,
+  Dimensions,
+  ScrollView,
+  Image,
+} from "react-native";
+import { TabView, TabBar, SceneMap } from "react-native-tab-view";
 
-const DATA = [
-  { id: 1 },
-  { id: 2 },
-  { id: 3 },
-  { id: 4 },
-  { id: 5 },
-  { id: 6 },
-  { id: 7 },
-  { id: 8 },
-  { id: 9 },
-  { id: 10 },
-];
-
-const Header_Max_Height = 240;
-const Header_Min_Height = 120;
-const Scroll_Distance = Header_Max_Height - Header_Min_Height;
-
-const DynamicHeader = ({ value }: any) => {
-  const animatedHeaderHeight = value.interpolate({
-    inputRange: [0, Scroll_Distance],
-    outputRange: [Header_Max_Height, Header_Min_Height],
-    extrapolate: "clamp",
-  });
-
-  const animatedHeaderColor = value.interpolate({
-    inputRange: [0, Scroll_Distance],
-    outputRange: ["#181D31", "#678983"],
-    extrapolate: "clamp",
-  });
-
-  return (
-    <Animated.View
-      style={[
-        styles.header,
-        {
-          height: animatedHeaderHeight,
-          backgroundColor: animatedHeaderColor,
-        },
-      ]}
-    >
-      <Text style={styles.title}>Header Content</Text>
-    </Animated.View>
-  );
-};
-
-const ScrollViewScreen = () => {
-  const scrollOffsetY = useRef(new Animated.Value(0)).current;
-  return (
-    <View>
-      <DynamicHeader value={scrollOffsetY} />
-      <ScrollView
-        scrollEventThrottle={5}
-        showsVerticalScrollIndicator={false}
-        onScroll={Animated.event(
-          [{ nativeEvent: { contentOffset: { y: scrollOffsetY } } }],
-          {
-            useNativeDriver: false,
-          }
-        )}
-      >
-        {DATA.map((val) => {
-          return (
-            <View key={val.id} style={styles.card}>
-              <Text style={styles.subtitle}>({val.id})</Text>
-            </View>
-          );
-        })}
-      </ScrollView>
+const FirstRoute = () => (
+  <ScrollView style={{ flex: 1, backgroundColor: "white" }}>
+    <View className="p-5 space-y-5">
+      <Text className="text-xl">Indispensable, meilleures ventes...</Text>
+      <View className="flex-row items-center space-x-2">
+        <Image
+          source={{
+            uri: "https://static.nike.com/a/images/w_300,c_limit/2e20a745-d9be-4d82-8cad-0c55d115fbb3/que-la-saison-des-cadeaux-commence-nike-com.png",
+          }}
+          className="w-40 h-40 rounded-md"
+        />
+        <Image
+          source={{
+            uri: "https://media.gqmagazine.fr/photos/64551119ce0c708b2278c458/4:3/w_5120,h_3840,c_limit/chris-henry-tV8yaU09t7w-unsplash.jpg",
+          }}
+          className="w-40 h-40 rounded-md"
+        />
+      </View>
     </View>
+  </ScrollView>
+);
+const SecondRoute = () => (
+  <ScrollView style={{ flex: 1, backgroundColor: "white", paddingLeft: 20 }}>
+    <Text>Tab Two</Text>
+  </ScrollView>
+);
+
+const ThirdRoute = () => (
+  <ScrollView style={{ flex: 1, backgroundColor: "white", paddingLeft: 20 }}>
+    <Text>Tab 3</Text>
+  </ScrollView>
+);
+
+export default function TabViewExample() {
+  const layout = useWindowDimensions();
+
+  const [index, setIndex] = React.useState(0);
+  const [routes] = React.useState([
+    { key: "first", title: "First" },
+    { key: "second", title: "Second" },
+    { key: "third", title: "Third" },
+  ]);
+
+  const renderScene = SceneMap({
+    first: FirstRoute,
+    second: SecondRoute,
+    third: ThirdRoute,
+  });
+
+  const renderTabBar = (props: any) => (
+    <TabBar
+      {...props}
+      activeColor={"black"}
+      inactiveColor={"#6b7280"}
+      indicatorStyle={{
+        backgroundColor: "black",
+        width: 90,
+        borderBottomWidth: 3,
+      }}
+      style={{
+        backgroundColor: "white",
+        marginLeft: 20,
+        shadowColor: "transparent",
+      }}
+      tabStyle={{ width: 90, paddingBottom: 15 }}
+      labelStyle={{ textTransform: "capitalize", fontSize: 16 }}
+      pressColor="white"
+      // indicatorContainerStyle={{
+      //   width: Dimensions.get("screen").width,
+      // }}
+      // contentContainerStyle={{
+      //   justifyContent: "center",
+      // }}
+    />
   );
-};
 
-export default ScrollViewScreen;
-
-const styles = StyleSheet.create({
-  header: {
-    justifyContent: "center",
-    alignItems: "center",
-    left: 0,
-    right: 0,
-    paddingTop: 25,
-  },
-  title: {
-    color: "#ffff",
-    fontWeight: "bold",
-    fontSize: 20,
-  },
-  card: {
-    height: 100,
-    backgroundColor: "#E6DDC4",
-    marginTop: 10,
-    justifyContent: "center",
-    alignItems: "center",
-    marginHorizontal: 10,
-  },
-  subtitle: {
-    color: "#181D31",
-    fontWeight: "bold",
-  },
-});
+  return (
+    <TabView
+      style={{ backgroundColor: "white" }}
+      navigationState={{ index, routes }}
+      renderScene={renderScene}
+      renderTabBar={renderTabBar}
+      onIndexChange={setIndex}
+      initialLayout={{ width: layout.width }}
+    />
+  );
+}
