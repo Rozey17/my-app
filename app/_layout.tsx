@@ -1,38 +1,61 @@
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { Drawer } from 'expo-router/drawer';
+import { AntDesign } from "@expo/vector-icons";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { useFonts } from "expo-font";
+import { SplashScreen, Stack, router } from "expo-router";
+import { useEffect } from "react";
+import { StatusBar } from "react-native";
 
-export default function Layout() {
+export {
+  // Catch any errors thrown by the Layout component.
+  ErrorBoundary,
+} from "expo-router";
+
+export const unstable_settings = {
+  // Ensure that reloading on `/modal` keeps a back button present.
+  initialRouteName: "(tabs)",
+};
+
+// Prevent the splash screen from auto-hiding before asset loading is complete.
+SplashScreen.preventAutoHideAsync();
+
+export default function RootLayout() {
+  const [loaded, error] = useFonts({
+    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+
+    ...FontAwesome.font,
+  });
+
+  // Expo Router uses Error Boundaries to catch errors in the navigation tree.
+  useEffect(() => {
+    if (error) throw error;
+  }, [error]);
+
+  useEffect(() => {
+    if (loaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded]);
+
+  if (!loaded) {
+    return null;
+  }
+
+  return <RootLayoutNav />;
+}
+
+function RootLayoutNav() {
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      {/* <Drawer screenOptions={{drawerHideStatusBarOnOpen:true,drawerStyle:{paddingTop:40} }}> */}
-      <Drawer screenOptions={{ drawerStyle: { paddingTop: 40 } }}>
-        <Drawer.Screen
-          name="index"
-          options={{
-            drawerLabel: "Home",
-            headerTitle: "Home",
-            headerTitleAlign: "center",
-            // headerStyle:{justifyContent:'center'}
-          }}
-        />
-        <Drawer.Screen
-          name="profile"
-          options={{
-            drawerLabel: "Profile",
-            headerTitle: "Profile",
-            headerTitleAlign: "center",
-            headerShown: false,
-          }}
-        />
-        <Drawer.Screen
-          name="news"
-          options={{
-            drawerLabel: "News",
-            headerTitle: "News",
-            headerTitleAlign: "center",
-          }}
-        />
-      </Drawer>
-    </GestureHandlerRootView>
+    <>
+      <StatusBar backgroundColor="#020617" barStyle="light-content" />
+      <Stack
+        screenOptions={{
+          headerShadowVisible: false,
+          animation: "slide_from_right",
+          headerTitleStyle: { fontSize: 16 },
+        }}
+      >
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      </Stack>
+    </>
   );
 }
