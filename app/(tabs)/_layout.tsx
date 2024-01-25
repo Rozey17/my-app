@@ -5,6 +5,9 @@ export default function AppLayout() {
       <Tabs.Screen
         // Name of the route to hide.
         name="index"
+        options={{
+          headerShown: false,
+        }}
       />
       <Tabs.Screen
         // Name of the route to hide.

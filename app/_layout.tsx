@@ -53,7 +53,7 @@ export default function RootLayout() {
 function RootLayoutNav() {
   return (
     <>
-      <StatusBar backgroundColor="#020617" barStyle="light-content" />
+      <StatusBar backgroundColor="#392F6B" barStyle="light-content" />
       <Stack
         screenOptions={{
           headerShadowVisible: false,
