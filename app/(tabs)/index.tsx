@@ -60,8 +60,16 @@ const index = () => {
           >
             <View className=" bg-[#635BFE] w-14 h-full p-3"></View>
             <View className="flex-row items-center justify-between flex-1 h-full p-3 pr-5">
-              <View className="">
-                <Text className="text-sm text-white">check your</Text>
+              <View className="space-y-1">
+                <Text
+                  className="text-white"
+                  style={{
+                    fontFamily: "GilroyMedium",
+                    fontSize: 11,
+                  }}
+                >
+                  check your
+                </Text>
                 <Text
                   className="text-lg text-[#FFAF30]"
                   style={{
