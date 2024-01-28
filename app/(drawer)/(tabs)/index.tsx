@@ -1,18 +1,10 @@
-import {
-  View,
-  Text,
-  Pressable,
-  FlatList,
-  ListRenderItem,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, Pressable, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
 import { useTheme } from "@react-navigation/native";
-import AllActionCards from "../../../components/AllActionCards";
 import { DrawerToggleButton } from "@react-navigation/drawer";
+import AllActionCards from "../../../src/components/AllActionCards";
 
 const index = () => {
   const { colors } = useTheme();
