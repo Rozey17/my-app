@@ -2,7 +2,7 @@ import { Feather, Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router/tabs";
 export default function AppLayout() {
   return (
-    <Tabs>
+    <Tabs screenOptions={{ tabBarStyle: { padding: 5 } }}>
       <Tabs.Screen
         // Name of the route to hide.
         name="index"
