@@ -1,10 +1,11 @@
 import { View, Text, Pressable, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Feather } from "@expo/vector-icons";
+import { Entypo, Feather } from "@expo/vector-icons";
 import { useTheme } from "@react-navigation/native";
 import { DrawerToggleButton } from "@react-navigation/drawer";
 import AllActionCards from "../../../src/components/ActionCards";
+import { router } from "expo-router";
 
 const index = () => {
   const { colors } = useTheme();
@@ -33,12 +34,10 @@ const index = () => {
             position: "absolute",
             borderRadius: 15,
             backgroundColor: "#F9F9FE",
-
             top: 80,
             alignSelf: "center",
             width: "90%",
             marginHorizontal: 15,
-            height: 120,
             shadowColor: "#000",
             shadowOffset: {
               width: 0,
@@ -50,14 +49,30 @@ const index = () => {
           }}
           className="flex-row items-center justify-between p-5"
         >
-          <View className="space-y-3">
-            <Text>welcome</Text>
-            <Text>user</Text>
-            <TouchableOpacity>
-              <Text>view profile</Text>
+          <View className="space-y-2">
+            <Text style={{ fontFamily: "GilroyMedium" }} className="capitalize">
+              welcome
+            </Text>
+            <Text
+              style={{ fontFamily: "GilroySemiBold" }}
+              className="text-[15px] capitalize"
+            >
+              ferrad makosso
+            </Text>
+            <TouchableOpacity
+              onPress={() => router.push("/profile")}
+              className="flex-row space-x-1"
+            >
+              <Text
+                style={{ fontFamily: "GilroySemiBold" }}
+                className="text-[#635BFE] text-[15px] capitalize"
+              >
+                view profile
+              </Text>
+              <Entypo name="chevron-right" size={18} color="#635BFE" />
             </TouchableOpacity>
           </View>
-          <View className="w-20 h-20 bg-black rounded-full"></View>
+          <View className="w-16 h-16 bg-black rounded-full"></View>
         </View>
       </View>
       <View className="p-5 ">
@@ -102,7 +117,7 @@ const index = () => {
             </View>
           </Pressable>
         </View>
-        <AllActionCards />
+        {/* <AllActionCards /> */}
       </View>
     </SafeAreaView>
   );

@@ -1,5 +1,6 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
+import { AntDesign, Entypo } from "@expo/vector-icons";
 
 const profile = () => {
   return (
@@ -20,34 +21,68 @@ const profile = () => {
         }}
         className="flex-row items-center w-full p-5 space-x-4"
       >
-        <View className="border-2 rounded-full">
+        <View className="border-2 rounded-full border-[#FFAF30]">
           <View className="w-16 h-16 m-[2px] bg-black rounded-full" />
         </View>
 
         <View className="space-y-1">
-          <Text>ferrad makosso</Text>
-          <Text>ferrad.fm@gmail.com</Text>
-          <TouchableOpacity>
-            <Text>edit profile</Text>
+          <Text
+            style={{ fontFamily: "GilroySemiBold" }}
+            className="text-[15px] capitalize"
+          >
+            ferrad makosso
+          </Text>
+          <Text style={{ fontFamily: "GilroyMedium" }} className="text-xs">
+            ferrad.fm@gmail.com
+          </Text>
+          <TouchableOpacity className="flex-row space-x-1">
+            <Text
+              style={{ fontFamily: "GilroySemiBold" }}
+              className="text-[#635BFE] text-[15px]"
+            >
+              Edit profile
+            </Text>
+            <Entypo name="chevron-right" size={18} color="#635BFE" />
           </TouchableOpacity>
         </View>
       </View>
       <View className="flex-row items-center justify-between">
         <View className="rounded-lg p-3 bg-[#392F6B] flex-1 flex-row items-center justify-between  ">
-          <Text className="text-xs text-white capitalize">
+          <Text
+            className="text-xs text-white capitalize"
+            style={{ fontFamily: "GilroyMedium" }}
+          >
             number of wallets
           </Text>
-          <Text className="capitalize text-[#FFAF30] text-3xl">3</Text>
+          <Text
+            style={{ fontFamily: "GilroyMedium" }}
+            className="capitalize text-[#FFAF30] text-3xl"
+          >
+            3
+          </Text>
         </View>
         <View className="flex-row items-center flex-1 ml-3 bg-[#635BFE] justify-between p-3 rounded-lg ">
           <View>
-            <Text className="text-xs text-white capitalize">
-              number of transactions
+            <Text
+              className="text-xs text-white capitalize"
+              style={{ fontFamily: "GilroyMedium" }}
+            >
+              nbr of transactions
             </Text>
-            <Text className="text-xs text-white capitalize">last 30 days</Text>
+            <Text
+              style={{ fontFamily: "GilroyMedium" }}
+              className="text-xs text-white capitalize"
+            >
+              last 30 days
+            </Text>
           </View>
 
-          <Text className="text-3xl text-white capitalize">0</Text>
+          <Text
+            style={{ fontFamily: "GilroyMedium" }}
+            className="text-3xl text-white capitalize"
+          >
+            0
+          </Text>
         </View>
       </View>
     </View>
