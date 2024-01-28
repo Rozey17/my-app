@@ -88,7 +88,12 @@ const index = () => {
             <View
               className=" bg-[#635BFE] w-16 h-full p-3"
               style={{ borderRadius: 8 }}
-            ></View>
+            >
+              <Image
+                source={require("../../../assets/svg/wallet-wallet-svgrepo-com.svg")}
+                className="w-10 h-10"
+              />
+            </View>
             <View className="flex-row items-center justify-between flex-1 h-full p-3 pr-5">
               <View className="space-y-1">
                 <Text
