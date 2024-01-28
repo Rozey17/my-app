@@ -4,8 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
 import { useTheme } from "@react-navigation/native";
 import { DrawerToggleButton } from "@react-navigation/drawer";
-import AllActionCards from "../../../src/components/AllActionCards";
-
+import AllActionCards from "../../../src/components/ActionCards";
 
 const index = () => {
   const { colors } = useTheme();
@@ -103,7 +102,7 @@ const index = () => {
             </View>
           </Pressable>
         </View>
-        {/* <AllActionCards /> */}
+        <AllActionCards />
       </View>
     </SafeAreaView>
   );
