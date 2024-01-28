@@ -27,13 +27,14 @@ const index = () => {
           position: "relative",
         }}
       >
-        <View className="flex-row items-center justify-evenly">
-          <View></View>
-          <Image
-            className="h-5 w-36"
-            source={require("../../../assets/images/pngegg.png")}
-          />
-          <DrawerToggleButton tintColor="white" />
+        <View className="flex-row items-center justify-end">
+          <View className="flex-row items-center justify-between w-2/3">
+            <Image
+              className="h-6 w-36"
+              source={require("../../../assets/images/pngegg.png")}
+            />
+            <DrawerToggleButton tintColor="white" />
+          </View>
         </View>
         <View
           style={{
