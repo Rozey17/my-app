@@ -58,7 +58,6 @@ function RootLayoutNav() {
         screenOptions={{
           headerShadowVisible: false,
           animation: "slide_from_right",
-          headerTitleStyle: { fontSize: 16 },
           headerShown: false,
         }}
       >

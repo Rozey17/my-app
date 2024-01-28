@@ -6,6 +6,7 @@ import { useTheme } from "@react-navigation/native";
 import { DrawerToggleButton } from "@react-navigation/drawer";
 import AllActionCards from "../../../src/components/AllActionCards";
 
+
 const index = () => {
   const { colors } = useTheme();
 
@@ -102,7 +103,7 @@ const index = () => {
             </View>
           </Pressable>
         </View>
-        <AllActionCards />
+        {/* <AllActionCards /> */}
       </View>
     </SafeAreaView>
   );

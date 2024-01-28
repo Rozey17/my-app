@@ -1,4 +1,5 @@
 import { Feather, Ionicons } from "@expo/vector-icons";
+import { DrawerToggleButton } from "@react-navigation/drawer";
 import { Tabs } from "expo-router/tabs";
 export default function AppLayout() {
   return (
@@ -16,9 +17,15 @@ export default function AppLayout() {
       />
       <Tabs.Screen
         // Name of the route to hide.
-        name="tabTwo"
+        name="profile"
         options={{
           title: "Profile",
+          headerRight: () => {
+            return <DrawerToggleButton tintColor="white" />;
+          },
+          headerTitleStyle: { color: "white" },
+          headerStyle: { backgroundColor: "#392F6B" },
+          headerTitleAlign: "center",
           tabBarIcon: ({ color }) => {
             return <Feather name="user" size={24} color={color} />;
           },
