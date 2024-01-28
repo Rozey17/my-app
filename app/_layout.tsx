@@ -59,9 +59,10 @@ function RootLayoutNav() {
           headerShadowVisible: false,
           animation: "slide_from_right",
           headerTitleStyle: { fontSize: 16 },
+          headerShown: false,
         }}
       >
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
       </Stack>
     </>
   );

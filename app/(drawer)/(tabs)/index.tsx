@@ -5,12 +5,14 @@ import {
   FlatList,
   ListRenderItem,
   Image,
+  TouchableOpacity,
 } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
 import { useTheme } from "@react-navigation/native";
-import AllActionCards from "../../components/AllActionCards";
+import AllActionCards from "../../../components/AllActionCards";
+import { DrawerToggleButton } from "@react-navigation/drawer";
 
 const index = () => {
   const { colors } = useTheme();
@@ -25,11 +27,13 @@ const index = () => {
           position: "relative",
         }}
       >
-        <View className="items-center justify-center">
+        <View className="flex-row items-center justify-evenly">
+          <View></View>
           <Image
             className="h-5 w-36"
-            source={require("../../assets/images/pngegg.png")}
+            source={require("../../../assets/images/pngegg.png")}
           />
+          <DrawerToggleButton tintColor="white" />
         </View>
         <View
           style={{
@@ -56,9 +60,9 @@ const index = () => {
           <View className="space-y-3">
             <Text>welcome</Text>
             <Text>user</Text>
-            <Pressable android_ripple={{ color: "" }}>
+            <TouchableOpacity>
               <Text>view profile</Text>
-            </Pressable>
+            </TouchableOpacity>
           </View>
           <View className="w-20 h-20 bg-black rounded-full"></View>
         </View>
@@ -70,11 +74,11 @@ const index = () => {
         >
           <Pressable
             className="flex-row  bg-[#392F6B]"
-            style={{ overflow: "hidden", borderRadius: 8 }}
-            android_ripple={{ color: "#3F405B", borderless: false }}
+            style={{ borderRadius: 8 }}
+            android_ripple={{ color: "#3F405B" }}
           >
             <View
-              className=" bg-[#635BFE] w-14 h-full p-3"
+              className=" bg-[#635BFE] w-16 h-full p-3"
               style={{ borderRadius: 8 }}
             ></View>
             <View className="flex-row items-center justify-between flex-1 h-full p-3 pr-5">

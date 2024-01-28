@@ -22,8 +22,8 @@ const AllActionCards = () => {
       numColumns={2}
       columnWrapperStyle={{
         flexDirection: "row",
-        gap: 10,
-        paddingVertical: 5,
+        gap: 12,
+        paddingVertical: 7,
       }}
     />
   );
