@@ -1,9 +1,10 @@
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, Ionicons } from "@expo/vector-icons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { DrawerToggleButton } from "@react-navigation/drawer";
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack, router } from "expo-router";
 import { useEffect } from "react";
-import { StatusBar } from "react-native";
+import { Pressable, StatusBar, TouchableOpacity } from "react-native";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -58,10 +59,34 @@ function RootLayoutNav() {
         screenOptions={{
           headerShadowVisible: false,
           animation: "slide_from_right",
-          headerShown: false,
+          headerLeft: () => {
+            return (
+              <Pressable onPress={() => router.back()}>
+                <Ionicons name="arrow-back-sharp" size={24} color="white" />
+              </Pressable>
+            );
+          },
+          headerTitleStyle: {
+            color: "white",
+            fontFamily: "GilroySemiBold",
+          },
+          headerStyle: { backgroundColor: "#392F6B" },
+          headerTitleAlign: "center",
         }}
       >
         <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
+        <Stack.Screen
+          name="screens/editProfile"
+          options={{
+            title: "Edit Profile",
+          }}
+        />
+        <Stack.Screen
+          name="screens/deposit"
+          options={{
+            title: "Deposit",
+          }}
+        />
       </Stack>
     </>
   );

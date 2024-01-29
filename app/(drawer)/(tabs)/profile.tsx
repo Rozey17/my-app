@@ -1,6 +1,7 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { AntDesign, Entypo } from "@expo/vector-icons";
+import { router } from "expo-router";
 
 const profile = () => {
   return (
@@ -35,7 +36,10 @@ const profile = () => {
           <Text style={{ fontFamily: "GilroyMedium" }} className="text-xs">
             ferrad.fm@gmail.com
           </Text>
-          <TouchableOpacity className="flex-row space-x-1">
+          <TouchableOpacity
+            onPress={() => router.push("/screens/editProfile")}
+            className="flex-row space-x-1"
+          >
             <Text
               style={{ fontFamily: "GilroySemiBold" }}
               className="text-[#635BFE] text-[15px]"

@@ -3,7 +3,17 @@ import { DrawerToggleButton } from "@react-navigation/drawer";
 import { Tabs } from "expo-router/tabs";
 export default function AppLayout() {
   return (
-    <Tabs screenOptions={{ tabBarStyle: { padding: 5 } }}>
+    <Tabs
+      screenOptions={{
+        tabBarStyle: { padding: 5 },
+        headerTitleStyle: {
+          color: "white",
+          fontFamily: "GilroySemiBold",
+        },
+        headerStyle: { backgroundColor: "#392F6B" },
+        headerTitleAlign: "center",
+      }}
+    >
       <Tabs.Screen
         // Name of the route to hide.
         name="index"
@@ -23,9 +33,6 @@ export default function AppLayout() {
           headerRight: () => {
             return <DrawerToggleButton tintColor="white" />;
           },
-          headerTitleStyle: { color: "white" },
-          headerStyle: { backgroundColor: "#392F6B" },
-          headerTitleAlign: "center",
           tabBarIcon: ({ color }) => {
             return <Feather name="user" size={24} color={color} />;
           },

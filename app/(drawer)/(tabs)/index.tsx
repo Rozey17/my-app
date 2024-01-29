@@ -4,8 +4,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Entypo, Feather } from "@expo/vector-icons";
 import { useTheme } from "@react-navigation/native";
 import { DrawerToggleButton } from "@react-navigation/drawer";
-import AllActionCards from "../../../src/components/ActionCards";
 import { router } from "expo-router";
+import AllActionCards from "../../../src/components/ActionCards";
+import WalletSvg from "../../../svg/WalletSvg";
 
 const index = () => {
   const { colors } = useTheme();
@@ -86,13 +87,10 @@ const index = () => {
             android_ripple={{ color: "#3F405B" }}
           >
             <View
-              className=" bg-[#635BFE] w-16 h-full p-3"
+              className=" bg-[#635BFE] w-16  flex-row items-center justify-center"
               style={{ borderRadius: 8 }}
             >
-              <Image
-                source={require("../../../assets/svg/wallet-wallet-svgrepo-com.svg")}
-                className="w-10 h-10"
-              />
+              <WalletSvg />
             </View>
             <View className="flex-row items-center justify-between flex-1 h-full p-3 pr-5">
               <View className="space-y-1">
