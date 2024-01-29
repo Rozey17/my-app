@@ -7,13 +7,15 @@ import {
 import { router } from "expo-router";
 import { Drawer } from "expo-router/drawer";
 import { Image, Text, View } from "react-native";
+import UserSvg from "../../assets/svg/person-2-svgrepo-com.svg";
 
 const DrawerContentHeader = () => {
   return (
     <View className="bg-[#392F6B] -mt-1 flex-row items-center pl-[24px] py-[27px] pr-[70px]">
       <View className="flex-row items-center space-x-2">
-        {/* <Image source={}/> */}
-        <View className="w-16 h-16 bg-black rounded-full" />
+        <View className="items-center justify-center w-16 h-16 rounded-full bg-slate-300">
+          <UserSvg />
+        </View>
 
         <View>
           <Text style={{ fontFamily: "GilroySemiBold" }} className="text-white">
