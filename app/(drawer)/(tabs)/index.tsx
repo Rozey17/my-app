@@ -6,7 +6,8 @@ import { useTheme } from "@react-navigation/native";
 import { DrawerToggleButton } from "@react-navigation/drawer";
 import { router } from "expo-router";
 import AllActionCards from "../../../src/components/ActionCards";
-import WalletSvg from "../../../svg/WalletSvg";
+import WalletSvg from "../../../assets/svg/wallet.svg";
+import UserSvg from "../../../assets/svg/person-2-svgrepo-com.svg";
 
 const index = () => {
   const { colors } = useTheme();
@@ -84,7 +85,9 @@ const index = () => {
               <Entypo name="chevron-right" size={18} color="#635BFE" />
             </TouchableOpacity>
           </View>
-          <View className="w-16 h-16 bg-black rounded-full"></View>
+          <View className="items-center justify-center w-16 h-16 rounded-full bg-slate-300">
+            <UserSvg />
+          </View>
         </View>
       </View>
       <View className="p-5 ">

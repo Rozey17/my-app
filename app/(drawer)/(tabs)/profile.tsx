@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { AntDesign, Entypo } from "@expo/vector-icons";
 import { router } from "expo-router";
-
+import User from "../../../assets/svg/person-2-svgrepo-com.svg";
 const profile = () => {
   return (
     <View className="p-5 space-y-5">
@@ -22,8 +22,10 @@ const profile = () => {
         }}
         className="flex-row items-center w-full p-5 space-x-4"
       >
-        <View className="border-2 rounded-full border-[#FFAF30]">
-          <View className="w-16 h-16 m-[2px] bg-black rounded-full" />
+        <View className="border-2 rounded-full border-slate-300">
+          <View className="w-16 h-16 m-[2px] bg-slate-300 rounded-full items-center justify-center">
+            <User />
+          </View>
         </View>
 
         <View className="space-y-1">

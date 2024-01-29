@@ -9,7 +9,6 @@ import {
 import React from "react";
 import { useTheme } from "@react-navigation/native";
 import { router } from "expo-router";
-import UserSvg from "../../svg/UserSvg";
 
 const editProfile = () => {
   const { colors } = useTheme();
@@ -20,9 +19,7 @@ const editProfile = () => {
         overScrollMode="never"
         className="relative p-6 "
       >
-        <View className="self-center">
-          <UserSvg color="black" />
-        </View>
+        <View className="self-center"></View>
       </ScrollView>
       <View className="fixed bottom-0 p-5 bg-white border-t border-gray-200 ">
         <View className="flex-row items-center justify-between ">
