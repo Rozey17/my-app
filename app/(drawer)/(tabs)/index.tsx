@@ -23,10 +23,21 @@ const index = () => {
       >
         <View className="flex-row items-center justify-end">
           <View className="flex-row items-center justify-between w-2/3">
-            <Image
-              className="h-6 w-36"
-              source={require("../../../assets/images/pngegg.png")}
-            />
+            <View className="flex-row">
+              <Text
+                className="text-3xl text-white"
+                style={{ fontFamily: "GilroyHeavy" }}
+              >
+                Light
+              </Text>
+              <Text
+                className="text-3xl text-[#FFAF30]"
+                style={{ fontFamily: "GilroyHeavy" }}
+              >
+                Pay
+              </Text>
+            </View>
+
             <DrawerToggleButton tintColor="white" />
           </View>
         </View>
