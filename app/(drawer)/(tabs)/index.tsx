@@ -44,11 +44,10 @@ const index = () => {
         </View>
         <View
           style={{
-            position: "absolute",
             borderRadius: 15,
-            backgroundColor: "#F9F9FE",
+
             top: 80,
-            alignSelf: "center",
+
             width: "90%",
             marginHorizontal: 15,
             shadowColor: "#000",
@@ -60,7 +59,7 @@ const index = () => {
             shadowRadius: 3.84,
             elevation: 5,
           }}
-          className="flex-row items-center justify-between p-5"
+          className="flex-row items-center justify-between p-5 self-center bg-[#F9F9FE] absolute"
         >
           <View className="space-y-2">
             <Text style={{ fontFamily: "GilroyMedium" }} className="capitalize">
@@ -92,7 +91,7 @@ const index = () => {
       </View>
       <View className="p-5 ">
         <View
-          className="h-16 mt-10 mb-4"
+          className="h-16 mt-8 mb-4"
           style={{ overflow: "hidden", borderRadius: 8 }}
         >
           <Pressable
