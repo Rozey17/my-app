@@ -11,14 +11,14 @@ import { Entypo, Feather } from "@expo/vector-icons";
 import { useTheme } from "@react-navigation/native";
 import { DrawerToggleButton } from "@react-navigation/drawer";
 import { router } from "expo-router";
-import WalletSvg from "../../../assets/svg/wallet.svg";
 import UserSvg from "../../../assets/svg/person-2-svgrepo-com.svg";
 import AllActionCards from "../../../src/components/AllActionCards";
+import CheckWallets from "../../../src/components/CheckWallets";
 
 const index = () => {
   const { colors } = useTheme();
   return (
-    <SafeAreaView className="">
+    <SafeAreaView className="flex-1 bg-[#F9F9FE] ">
       <View
         style={{
           paddingVertical: 15,
@@ -65,7 +65,7 @@ const index = () => {
             shadowRadius: 3.84,
             elevation: 5,
           }}
-          className="flex-row items-center justify-between p-5 self-center bg-[#F9F9FE] absolute"
+          className="flex-row items-center justify-between p-5 self-center bg-[#F9F9FE] absolute z-30"
         >
           <View className="space-y-2">
             <Text style={{ fontFamily: "GilroyMedium" }} className="capitalize">
@@ -95,50 +95,8 @@ const index = () => {
           </View>
         </View>
       </View>
-      <View className="p-5 ">
-        <View
-          className="h-16 mt-8 mb-4"
-          style={{ overflow: "hidden", borderRadius: 8 }}
-        >
-          <Pressable
-            className="flex-row  bg-[#392F6B]"
-            style={{ borderRadius: 8 }}
-            android_ripple={{ color: "#3F405B" }}
-          >
-            <View
-              className=" bg-[#635BFE] w-16  flex-row items-center justify-center"
-              style={{ borderRadius: 8 }}
-            >
-              <WalletSvg />
-            </View>
-            <View className="flex-row items-center justify-between flex-1 h-full p-3 pr-5">
-              <View className="space-y-1">
-                <Text
-                  className="text-white"
-                  style={{
-                    fontFamily: "GilroyMedium",
-                    fontSize: 11,
-                  }}
-                >
-                  check your
-                </Text>
-                <Text
-                  className="text-lg text-[#FFAF30]"
-                  style={{
-                    fontFamily: "GilroySemiBold",
-                    fontSize: 15,
-                    lineHeight: 20,
-                  }}
-                >
-                  wallet balances
-                </Text>
-              </View>
-              <View>
-                <Feather name="arrow-right" size={24} color="white" />
-              </View>
-            </View>
-          </Pressable>
-        </View>
+      <View className="z-0 p-5 ">
+        <CheckWallets />
         <AllActionCards />
       </View>
     </SafeAreaView>

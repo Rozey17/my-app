@@ -27,12 +27,12 @@ const ActionCard = ({ item }: { item: cardProps }) => {
           padding: 12,
           backgroundColor: "white",
           borderWidth: 1,
-          borderColor: "#e0f2fe",
+          borderColor: "#E7E5FF",
           borderRadius: 8,
           height: "100%",
           width: "100%",
         }}
-        android_ripple={{ color: "#FFFFFF", borderless: false }}
+        android_ripple={{ color: "#E8E7EA", borderless: false }}
       >
         {item.icon}
 
