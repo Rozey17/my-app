@@ -1,12 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const Deposit = () => {
+const withdrawMoney = () => {
   return (
     <View>
-      <Text className="font-black text-red-500">Deposit</Text>
+      <Text>withdrawMoney</Text>
     </View>
   );
 };
 
-export default Deposit;
+export default withdrawMoney;

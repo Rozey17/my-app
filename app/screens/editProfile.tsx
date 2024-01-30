@@ -23,9 +23,12 @@ const editProfile = () => {
       </ScrollView>
       <View className="fixed bottom-0 p-5 bg-white border-t border-gray-200 ">
         <View className="flex-row items-center justify-between ">
-          <TouchableOpacity onPress={() => router.back()} className={`flex-1`}>
+          <TouchableOpacity
+            onPress={() => router.back()}
+            className={`flex-1 py-4 px-8`}
+          >
             <Text
-              className="text-center capitalize"
+              className="text-center capitalize text-[15px]"
               style={{ fontFamily: "GilroySemiBold" }}
             >
               cancel
@@ -36,7 +39,7 @@ const editProfile = () => {
             className={`bg-[#FFAF30] py-4 px-8 flex-1 rounded-lg`}
           >
             <Text
-              className="text-center capitalize"
+              className="text-center capitalize text-[15px]"
               style={{ fontFamily: "GilroySemiBold" }}
             >
               save changes

@@ -1,10 +1,9 @@
-import { AntDesign, Ionicons } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { DrawerToggleButton } from "@react-navigation/drawer";
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack, router } from "expo-router";
 import { useEffect } from "react";
-import { Pressable, StatusBar, TouchableOpacity } from "react-native";
+import { Pressable, StatusBar } from "react-native";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -85,6 +84,36 @@ function RootLayoutNav() {
           name="screens/deposit"
           options={{
             title: "Deposit",
+          }}
+        />
+        <Stack.Screen
+          name="screens/withdrawMoney"
+          options={{
+            title: "Retirer de l'argent",
+          }}
+        />
+        <Stack.Screen
+          name="screens/transactions"
+          options={{
+            title: "Transactions",
+          }}
+        />
+        <Stack.Screen
+          name="screens/sendMoney"
+          options={{
+            title: "Envoyer de l'argent",
+          }}
+        />
+        <Stack.Screen
+          name="screens/requestMoney"
+          options={{
+            title: "Demander de l'argent",
+          }}
+        />
+        <Stack.Screen
+          name="screens/exchange"
+          options={{
+            title: "Echanger",
           }}
         />
       </Stack>
