@@ -8,7 +8,7 @@ type cardProps = {
   routeName: any;
 };
 
-const OperationCard = ({ item }: { item: cardProps }) => {
+const ActionCard = ({ item }: { item: cardProps }) => {
   return (
     <View
       style={{
@@ -50,4 +50,4 @@ const OperationCard = ({ item }: { item: cardProps }) => {
   );
 };
 
-export default OperationCard;
+export default ActionCard;

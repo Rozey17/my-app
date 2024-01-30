@@ -2,10 +2,8 @@ import {
   View,
   Text,
   Pressable,
-  Image,
   TouchableOpacity,
   ListRenderItem,
-  FlatList,
 } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -15,71 +13,10 @@ import { DrawerToggleButton } from "@react-navigation/drawer";
 import { router } from "expo-router";
 import WalletSvg from "../../../assets/svg/wallet.svg";
 import UserSvg from "../../../assets/svg/person-2-svgrepo-com.svg";
-import DepositMoney from "../../../assets/svg/deposit-money.svg";
-import RequestMoney from "../../../assets/svg/request-money.svg";
-import SendMoney from "../../../assets/svg/sendMoney.svg";
-import WithdrawMoney from "../../../assets/svg/withdraw.svg";
-import TransactionCalculator from "../../../assets/svg/transactionCalculator.svg";
-import Exchange from "../../../assets/svg/exchange.svg";
-import OperationCards from "../../../src/components/OperationCards";
+import AllActionCards from "../../../src/components/AllActionCards";
 
 const index = () => {
   const { colors } = useTheme();
-  const data = [
-    {
-      title: "deposit money",
-      icon: <DepositMoney />,
-      routeName: "/screens/deposit",
-    },
-    {
-      title: "withdraw money",
-      icon: <WithdrawMoney />,
-      routeName: "/screens/withdrawMoney",
-    },
-    {
-      title: "send money",
-      icon: <SendMoney />,
-      routeName: "/screens/sendMoney",
-    },
-    {
-      title: "request money",
-      icon: <RequestMoney />,
-      routeName: "/screens/requestMoney",
-    },
-    {
-      title: "exchange",
-      icon: <Exchange />,
-      routeName: "/screens/exchange",
-    },
-    {
-      title: "transactions",
-      icon: <TransactionCalculator />,
-      routeName: "/screens/transactions",
-    },
-  ];
-
-  const renderItem: ListRenderItem<any> = ({ item }) => {
-    return (
-      <View className="flex-1 h-24 overflow-hidden rounded-lg">
-        <Pressable
-          onPress={() => router.push(item.routeName)}
-          className="items-center justify-center w-full h-full p-3 space-y-3 bg-white border rounded-lg border-sky-200"
-          android_ripple={{ color: "#FFFFFF", borderless: false }}
-        >
-          {item.icon}
-          <Text
-            style={{
-              fontFamily: "GilroySemiBold",
-              textTransform: "capitalize",
-            }}
-          >
-            {item.title}
-          </Text>
-        </Pressable>
-      </View>
-    );
-  };
-
   return (
     <SafeAreaView className="">
       <View
@@ -201,17 +138,7 @@ const index = () => {
             </View>
           </Pressable>
         </View>
-        <OperationCards />
-        {/* <FlatList
-          data={data}
-          renderItem={renderItem}
-          numColumns={2}
-          columnWrapperStyle={{
-            flexDirection: "row",
-            gap: 12,
-            paddingVertical: 7,
-          }}
-        /> */}
+        <AllActionCards />
       </View>
     </SafeAreaView>
   );

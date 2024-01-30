@@ -6,7 +6,7 @@ import SendMoney from "../../assets/svg/sendMoney.svg";
 import WithdrawMoney from "../../assets/svg/withdraw.svg";
 import TransactionCalculator from "../../assets/svg/transactionCalculator.svg";
 import Exchange from "../../assets/svg/exchange.svg";
-import OperationCard from "./OperationCard";
+import ActionCard from "./ActionCard";
 
 const data = [
   {
@@ -42,10 +42,10 @@ const data = [
 ];
 
 const renderItem: ListRenderItem<any> = ({ item }) => {
-  return <OperationCard item={item} />;
+  return <ActionCard item={item} />;
 };
 
-const OperationCards = () => {
+const AllActionCards = () => {
   return (
     <FlatList
       data={data}
@@ -60,4 +60,4 @@ const OperationCards = () => {
   );
 };
 
-export default OperationCards;
+export default AllActionCards;
