@@ -47,12 +47,13 @@ const index = () => {
             <DrawerToggleButton tintColor="white" />
           </View>
         </View>
+
+        {/* must be a component */}
+
         <View
           style={{
             borderRadius: 15,
-
             top: 80,
-
             width: "90%",
             marginHorizontal: 15,
             shadowColor: "#000",

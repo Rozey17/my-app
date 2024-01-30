@@ -6,6 +6,7 @@ export default function AppLayout() {
     <Tabs
       screenOptions={{
         tabBarStyle: { padding: 5 },
+        tabBarLabelStyle: { fontFamily: "GilroySemiBold" },
         headerTitleStyle: {
           color: "white",
           fontFamily: "GilroySemiBold",
@@ -30,6 +31,7 @@ export default function AppLayout() {
         name="profile"
         options={{
           title: "Profile",
+
           headerRight: () => {
             return <DrawerToggleButton tintColor="white" />;
           },
