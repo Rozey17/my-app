@@ -13,15 +13,12 @@ const CheckWallets = () => {
         <View className="rounded-lg bg-[#635BFE] items-center justify-center w-16">
           <WalletSvg />
         </View>
-        <View className="flex-row items-center justify-between h-full p-3 pr-5">
+        <View className="flex-row items-center justify-between flex-1 p-3 pr-5">
           <View className="space-y-1">
             <Text
+              className="text-white text-[11px]"
               style={{
-                color: "white",
                 fontFamily: "GilroyMedium",
-                fontSize: 11,
-                marginTop: 4,
-                marginBottom: 4,
               }}
             >
               check your
