@@ -1,11 +1,11 @@
 import { ListRenderItem, FlatList } from "react-native";
 import React from "react";
-import DepositMoney from "../../assets/svg/deposit-money.svg";
-import RequestMoney from "../../assets/svg/request-money.svg";
-import SendMoney from "../../assets/svg/sendMoney.svg";
-import WithdrawMoney from "../../assets/svg/withdraw.svg";
-import TransactionCalculator from "../../assets/svg/transactionCalculator.svg";
-import Exchange from "../../assets/svg/exchange.svg";
+import DepositMoney from "../assets/svg/deposit-money.svg";
+import RequestMoney from "../assets/svg/request-money.svg";
+import SendMoney from "../assets/svg/sendMoney.svg";
+import WithdrawMoney from "../assets/svg/withdraw.svg";
+import TransactionCalculator from "../assets/svg/transactionCalculator.svg";
+import Exchange from "../assets/svg/exchange.svg";
 import ActionCard from "./ActionCard";
 
 const data = [

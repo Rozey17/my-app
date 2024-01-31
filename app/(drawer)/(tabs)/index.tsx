@@ -12,8 +12,8 @@ import { useTheme } from "@react-navigation/native";
 import { DrawerToggleButton } from "@react-navigation/drawer";
 import { router } from "expo-router";
 import UserSvg from "../../../assets/svg/person-2-svgrepo-com.svg";
-import AllActionCards from "../../../src/components/AllActionCards";
-import CheckWallets from "../../../src/components/CheckWallets";
+import AllActionCards from "../../../components/AllActionCards";
+import CheckWallets from "../../../components/CheckWallets";
 
 const index = () => {
   const { colors } = useTheme();
